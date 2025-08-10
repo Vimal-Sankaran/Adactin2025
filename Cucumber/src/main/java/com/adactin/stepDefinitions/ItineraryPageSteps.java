@@ -23,8 +23,6 @@ public class ItineraryPageSteps extends BaseClass {
     @Then("I validate details in Itinerary Page with json {string}")
     public void validateIt(String id){
         String orderNumber = entityHelper.getCustomerDataById(id).getOrderNumber();
-        System.out.println(orderNumber);
-        System.out.println(itineraryPage.getHotelName(orderNumber));
         assertTrue(itineraryPage.getHotelName(orderNumber),entityHelper.getCustomerDataById(id).getHotelName(),"Valid");
         assertTrue(itineraryPage.getLocation(orderNumber),entityHelper.getCustomerDataById(id).getLocation(),"Valid");
     }
