@@ -26,14 +26,12 @@ public class ConfirmationPageSteps extends BaseClass {
     public void validateConfirmationPage(String id){
         assertTrue(confirmationPage.getHotelName(),entityHelper.getCustomerDataById(id).getHotelName(),"Hotel name valid");
         assertTrue(confirmationPage.getLocation(),entityHelper.getCustomerDataById(id).getLocation(),"Location valid");
-//        assertTrue(confirmationPage.getRoomType(),entityHelper.getCustomerDataById(id).getRoomType(),"Room type valid");
         assertTrue(confirmationPage.getTotalRooms().substring(0,1),entityHelper.getCustomerDataById(id).getNoOfRooms().substring(0,1),"No of rooms valid");
         assertTrue(confirmationPage.getPricePerNight(),entityHelper.getCustomerDataById(id).getPricePerNight(),"Price valid");
         assertTrue(confirmationPage.getTotalPrice(),entityHelper.getCustomerDataById(id).getTotalPriceExcGST(),"Price valid");
         assertTrue(confirmationPage.getGST(),entityHelper.getCustomerDataById(id).getGst(),"Price valid");
         assertTrue(confirmationPage.getFinalBilledPrice(),entityHelper.getCustomerDataById(id).getTotalPriceIncGST(),"Price valid");
         assertTrue(confirmationPage.getFirstName(),entityHelper.getCustomerDataById(id).getFirstName(),"Valid");
-//        assertTrue(confirmationPage.getLastName(),entityHelper.getCustomerDataById(id).getLastName(),"Valid");
         assertTrue(confirmationPage.getBillingAddress(),entityHelper.getCustomerDataById(id).getBillingAddress(),"Valid");
     }
 
@@ -42,7 +40,6 @@ public class ConfirmationPageSteps extends BaseClass {
         entityHelper.getCustomerDataById(id).setOrderNumber(confirmationPage.getOrderNo());
         entityHelper.saveBookingData();
         confirmationPage.clickMyItineraryButton();
-        Thread.sleep(4000);
     }
 
 
