@@ -45,12 +45,9 @@ public class BookingPageSteps extends BaseClass {
         bookingPage.setCreditCardNo(entityHelper.getCustomerDataById(id).getCcNum());
         bookingPage.setCcType(entityHelper.getCustomerDataById(id).getCcType());
         String ccExp = entityHelper.getCustomerDataById(id).getCcExpiry();//12/27
-        System.out.println(ccExp.split("/")[0]);
-        System.out.println(ccExp.split("/")[1]);
         bookingPage.setMonth(ccExp.split("/")[0]);
         bookingPage.setExpYear(ccExp.split("/")[1]);
         bookingPage.setCvv(entityHelper.getCustomerDataById(id).getCvv());
         bookingPage.clickBookNow();
-        Thread.sleep(5000);
     }
 }
