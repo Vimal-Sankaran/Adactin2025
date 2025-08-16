@@ -4,10 +4,10 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/Features",
-        glue = {"stepDefinitions"},
-        plugin = {"pretty,tech.grasshopper.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
-        tags = "@TC01"
+        features = "classpath:/Features",
+        glue = {"com.adactin.stepDefinitions"},
+        plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
+        tags = "@TC02"
 )
 public class TestRunner {
 }

@@ -47,5 +47,6 @@ public class SearchPageSteps extends BaseClass {
     @Then("I validate Check in date error in search page displayed as {string}")
     public void validateCheckInError(String errorMsg) {
         assertTrue(errorMsg,searchPage.getCheckInError(),"CheckIn error validated");
+        attachScreenshotToReport();
     }
 }

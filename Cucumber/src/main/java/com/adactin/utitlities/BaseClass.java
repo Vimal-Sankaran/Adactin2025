@@ -1,5 +1,9 @@
 package com.adactin.utitlities;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 import junit.framework.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -322,9 +326,37 @@ public class BaseClass {
         ImageIO.write(scr.getImage(),"png",new File(location));
     }
 
-    public static void assertTrue(String actual,String expected,String msg) {
-        Assert.assertEquals(actual,expected);
-        System.out.println(msg);
+    public static void assertTrue(String actual, String expected, String msg) {
+        try {
+            Assert.assertEquals(actual, expected);
+            ExtentCucumberAdapter.getCurrentStep().log(Status.PASS, msg + " | Actual: " + actual + " | Expected: " + expected);
+        } catch (AssertionError e) {
+            ExtentCucumberAdapter.getCurrentStep().log(Status.FAIL,
+                    msg + " | Assertion Failed | Actual: " + actual + " | Expected: " + expected);
+            throw e; // rethrow to fail the test
+        }
     }
+
+        // ... your existing methods
+
+        public static void attachScreenshotToReport() {
+            try {
+                // Capture screenshot in Base64
+                String base64Screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
+
+                // Get current step from Extent Cucumber Adapter
+                ExtentTest test = ExtentCucumberAdapter.getCurrentStep();
+
+                if (test != null) {
+                    test.info("Screenshot",
+                            MediaEntityBuilder.createScreenCaptureFromBase64String(base64Screenshot).build());
+                } else {
+                    System.out.println("⚠️ Could not fetch current ExtentTest step.");
+                }
+            } catch (Exception e) {
+                System.out.println("⚠️ Failed to attach screenshot: " + e.getMessage());
+            }
+        }
+
 
 }
