@@ -13,7 +13,7 @@ import java.util.List;
 public class EntityHelper {
 
     public static List<BookingData> readJsonFile() {
-        String jsonPath = "D:\\TestingB\\Cucumber\\src\\test\\resources\\data\\BookingData.json";
+        String jsonPath = "C:\\Users\\pavi\\IdeaProjects\\Adactin2025\\Cucumber\\src\\test\\resources\\data\\BookingData.json";
         ObjectMapper objectMapper = new ObjectMapper();
         List<BookingData> bookingDataList = null;
 
