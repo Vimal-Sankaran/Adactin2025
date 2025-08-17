@@ -155,4 +155,28 @@
   "gst" : "AUD $ 91",
   "totalPriceIncGST" : "AUD $ 1001",
   "orderNumber" : "321JVO7RHG"
-} ]
+},
+  {
+    "id" : "TC04",
+    "location" : "Sydney",
+    "hotelName" : "Hotel Creek",
+    "checkIn" : "25/08/2025",
+    "checkOut" : "27/08/2025",
+    "firstName" : "Pavithra",
+    "lastName" : "Manoharan",
+    "adultsPerRoom" : "2 - Two",
+    "childrenPerRoom" : "1 - One",
+    "roomType" : "Super Deluxe",
+    "noOfRooms" : "2 - Two",
+    "billingAddress" : "No.5, Bill Avenue, Chennai",
+    "ccNum" : "4444333322221111",
+    "ccType" : "VISA",
+    "ccExpiry" : "12/2027",
+    "cvv" : "123",
+    "pricePerNight" : "AUD $ 450",
+    "totalPriceExcGST" : "AUD $ 910",
+    "gst" : "AUD $ 91",
+    "totalPriceIncGST" : "AUD $ 1001",
+    "orderNumber" : "Q953NNF1M2"
+  }
+]

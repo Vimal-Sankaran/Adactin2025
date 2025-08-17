@@ -77,4 +77,11 @@ public class SelectPageSteps extends BaseClass {
         assertTrue(selectPage.getDepartureDate(),entityHelper.getCustomerDataById(id).getCheckOut(),"Departure date validated");
         assertTrue(selectPage.getRoomType(),entityHelper.getCustomerDataById(id).getRoomType(),"Room type validated");
     }
+
+    @Then("I validate hotel name and location in search Page with json {string}")
+    public void validateHotel(String id){
+        assertTrue(selectPage.getHotelName(),entityHelper.getCustomerDataById(id).getHotelName(),"Hotel name validated");
+        assertTrue(selectPage.getLocation(),entityHelper.getCustomerDataById(id).getLocation(),"Location validated");
+
+    }
 }

@@ -9,7 +9,7 @@ public class FileReaderManager {
     Properties property = new Properties();
 
     public String getPropertyValue(String key) throws IOException {
-        String propertyFilePath = "D:\\TestingB\\Cucumber\\src\\test\\Adactin.properties";
+        String propertyFilePath = "C:\\Users\\pavi\\IdeaProjects\\Adactin2025\\Cucumber\\src\\test\\Adactin.properties";
         FileInputStream fis = new FileInputStream(propertyFilePath);
         property.load(fis);
         String value = property.get(key).toString();
